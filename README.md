@@ -1,5 +1,6 @@
 # Representation-of-a-Real-World-Problem-as-a-Markov-Decision-Process
-
+### Name: Swetha R
+### Reg No: 212225100055
 
 ## Aim
 
@@ -272,35 +273,8 @@ print("\nMDP Representation Completed Successfully!")
 ```
 ---
 ## Output
-The expected output of the Python program is:
-```
-Name: SWETHA R
-Register Number: 212225100055
+<img width="587" height="552" alt="Screenshot 2026-10-29 095454" src="https://github.com/user-attachments/assets/1e96a033-b798-41cf-b201-21cd1af2f537" />
 
---- STATE SPACE ---
-S1: Hot
-S2: Comfortable
-S3: Cold
-
---- ACTION SPACE ---
-A1: AC ON
-A2: AC OFF
-A3: Reduce Cooling
-
---- TRANSITIONS & REWARDS ---
-Hot --AC ON--> Comfortable | P=0.8 | R=10
-Hot --AC ON--> Hot | P=0.2 | R=-2
-Comfortable --Reduce Cooling--> Comfortable | P=0.8 | R=5
-Comfortable --Reduce Cooling--> Cold | P=0.2 | R=-5
-Cold --AC OFF--> Comfortable | P=0.7 | R=10
-Cold --AC OFF--> Cold | P=0.3 | R=-2
---- DISCOUNT FACTOR ---
-Gamma = 0.9
-
-MDP Representation Completed Successfully!
-```
-
----
 
 ## Result
 
