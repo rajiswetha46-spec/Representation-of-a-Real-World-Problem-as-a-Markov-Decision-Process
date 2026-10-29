@@ -231,19 +231,43 @@ The following Python program represents the MDP using dictionaries.
 
 It displays the state space, action space, transition probabilities, reward function, and discount factor.
 ```
-print("Name: SWETHA R")
+
+# MDP Representation using Python
+print("Name: Swetha R")
 print("Register Number: 212225100055")
+# State Space
+states = {
+    "S1": "Hot",
+    "S2": "Comfortable",
+    "S3": "Cold"
+}
+print("\n--- STATE SPACE ---")
+for key, value in states.items():
+    print(f"{key}: {value}")
+# Action Space
+actions = {
+    "A1": "AC ON",
+    "A2": "AC OFF",
+    "A3": "Reduce Cooling"
+}
+print("\n--- ACTION SPACE ---")
+for key, value in actions.items():
+    print(f"{key}: {value}")
 
-states = ["Hot", "Comfortable", "Cold"]
-actions = ["AC ON", "AC OFF", "Reduce Cooling"]
-gamma = 0.9
-
+# Transition Probabilities
 transitions = {
     ("Hot", "AC ON"): {"Comfortable": 0.8, "Hot": 0.2},
-    ("Comfortable", "Reduce Cooling"): {"Comfortable": 0.8, "Cold": 0.2},
+    ("Comfortable", "Reduce Cooling"): {
+        "Comfortable": 0.8,
+        "Cold": 0.2
+    },
     ("Cold", "AC OFF"): {"Comfortable": 0.7, "Cold": 0.3}
 }
-
+print("\n--- TRANSITION PROBABILITIES ---")
+for (state, action), next_states in transitions.items():
+    for next_state, probability in next_states.items():
+        print(f"{state} --{action}--> {next_state} | P = {probability}")
+# Reward Function
 rewards = {
     ("Hot", "AC ON", "Comfortable"): 10,
     ("Hot", "AC ON", "Hot"): -2,
@@ -252,28 +276,23 @@ rewards = {
     ("Cold", "AC OFF", "Comfortable"): 10,
     ("Cold", "AC OFF", "Cold"): -2
 }
-
-print("\n--- STATE SPACE ---")
-for i, s in enumerate(states, 1):
-    print(f"S{i}: {s}")
-
-print("\n--- ACTION SPACE ---")
-for i, a in enumerate(actions, 1):
-    print(f"A{i}: {a}")
-
-print("\n--- TRANSITIONS & REWARDS ---")
-for (s, a), next_states in transitions.items():
-    for ns, p in next_states.items():
-        r = rewards[(s, a, ns)]
-        print(f"{s} --{a}--> {ns} | P={p} | R={r}")
-
+print("\n--- REWARD FUNCTION ---")
+for (state, action, next_state), reward in rewards.items():
+    print(
+        f"State: {state}, Action: {action}, "
+        f"Next State: {next_state}, Reward: {reward}"
+    )
+# Discount Factor
+gamma = 0.9
 print("\n--- DISCOUNT FACTOR ---")
 print("Gamma =", gamma)
 print("\nMDP Representation Completed Successfully!")
 ```
 ---
 ## Output
-<img width="587" height="552" alt="Screenshot 2026-10-29 095454" src="https://github.com/user-attachments/assets/1e96a033-b798-41cf-b201-21cd1af2f537" />
+<img width="768" height="658" alt="Screenshot 2026-10-29 100402" src="https://github.com/user-attachments/assets/48a77e15-e1a7-4cf3-baee-5692c94a4b32" />
+
+<img width="655" height="94" alt="Screenshot 2026-10-29 100410" src="https://github.com/user-attachments/assets/03115f75-443e-453b-9e4a-9a9ce0916ca1" />
 
 
 ## Result
